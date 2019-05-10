@@ -1,0 +1,114 @@
+export { default as theme } from "../theme";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { Appear } from "mdx-deck";
+
+# Shell
+
+---
+
+## Histórico
+
+<Appear>
+  <li>
+    <primary>1970</primary> — AT&T Unix
+  </li>
+  <li>
+    <primary>1991</primary> — Linux
+  </li>
+  <li>
+    <primary>2001</primary> — Mac OS X
+  </li>
+  <li>
+    <primary>2016</primary> — Windows 10
+  </li>
+  <li>
+    <primary>2019</primary> — Windows 10 WSL2
+  </li>
+</Appear>
+
+---
+
+## Filosofia Unix
+
+<div style={{ width: "60vw" }}>
+  "This is the <primary>Unix</primary> philosophy:<br />
+  Write programs that <primary>do one thing</primary> and do it well.<br />
+  Write programs to <primary>work together</primary>.<br />
+  Write programs to <primary>handle text streams</primary>,<br />
+  because that is a universal interface."
+</div>
+
+> Doug McIlroy, inventou o pipe em 1970
+
+---
+
+## Pra que?
+
+<Appear>
+  <li>Criar estrutura básica de pastas e arquivos do projeto</li>
+  <li>Edição em massa em vários arquivos</li>
+  <li>Renomear vários arquivos de uma vez</li>
+  <li>Extrair dados dos logs do Apache ou Nginx</li>
+  <li>Encontrar rapidamente um texto no projeto</li>
+  <li>Usar as diversas ferramentas já existentes</li>
+  <li>Automatizar tarefas repetitivas e man</li>
+  <li>Criar suas próprias ferramentas</li>
+</Appear>
+
+---
+
+### Exemplo de comando
+
+<SyntaxHighlighter language="shell" style={darcula}>
+  $ sed -ri 's/primary([0-9]+)/col-md-\1/g' *.html
+</SyntaxHighlighter>
+
+---
+
+# `$_`
+
+---
+
+### A estrutura de um comando
+
+---
+
+### Comando, opções, argumentos
+
+<pre>
+  <p><pre>php -s localhost:8000</pre></p>
+  <p><pre>grep -i -r margin-top assets/</pre></p>
+  <p><pre>node-sass --watch source/sass/* --output assets/css</pre></p>
+</pre>
+
+---
+
+### <primary>Comando,</primary> <secondary>opções,</secondary> <muted>argumentos</muted>
+
+<pre>
+  <p><pre><primary>php</primary> <secondary>-s</secondary> <muted>localhost:8000</muted></pre></p>
+  <p><primary>grep</primary> <secondary>-i -r</secondary> <muted>margin-top assets/</muted></p>
+  <p><primary>node-sass</primary> <secondary>--watch source/sass/* --output</secondary> <muted>assets/css</muted></p>
+</pre>
+
+
+---
+
+### Comando, Subcomando, opções, argumentos
+
+<pre>
+  <p><pre>gem install sass</pre></p>
+  <p><pre>apt install -f vim</pre></p>
+  <p><pre>npm install jest --save-dev</pre></p>
+</pre>
+
+---
+
+### <primary>Comando,</primary> <info>Subcomando,</info> <secondary>opções,</secondary> <muted>argumentos</muted>
+
+<pre>
+  <p><pre><primary>gem</primary> <info>install</info> <muted>sass</muted></pre></p>
+  <p><primary>apt</primary> <info>install</info> <secondary>-f</secondary> <muted>vim</muted></p>
+  <p><primary>npm</primary> <info>install</info> <muted>jest</muted> <secondary>--save-dev</secondary></p>
+</pre>

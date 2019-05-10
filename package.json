@@ -1,0 +1,17 @@
+{
+  "name": "apresentacoes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "php": "mdx-deck slides/php.mdx",
+    "shell": "mdx-deck slides/shell.mdx"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mdx-deck": "^2.3.2",
+    "react-syntax-highlighter": "^10.2.1"
+  }
+}

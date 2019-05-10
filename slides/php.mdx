@@ -1,0 +1,103 @@
+export { default as theme } from "../theme";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { Appear } from "mdx-deck";
+
+# PHP
+
+---
+
+## Versões
+
+- 7.0 - 3 de dezembro de 2018
+- 5.6 - 31 de dezembro de 2018
+- 5.5 - 21 de julho de 2016
+- 5.4 - 14 de agosto de 2014
+
+---
+
+# PSR
+
+---
+
+## PSR
+
+- 1 - Padrões básicos de código
+- 2 - Padrões de codificação
+- 3 - Interface de log
+- 4 - Padrão de autoload
+- 6 - Interface de cache
+- 7 - Interface de mensagens HTTP
+
+---
+
+# Composer
+
+---
+
+## Composer
+
+- composer.phar
+- composer.json
+- composer.lock
+
+---
+
+# Packagist
+
+https://packagist.org/
+
+---
+
+## PHPUnit
+
+- 5.7 Beta (5.6|7.0)
+- 5.6 Stable (5.6|7.0)
+- 4.8 Old (5.3.3)
+
+---
+
+# Monolog
+
+- PSR-3
+- Handlers
+
+---
+
+## Handlers
+
+- Syslog
+- Mandrill
+- SendGrid
+- Slack
+- IFTTT
+- New Relic
+
+---
+
+# PHP The Right Way
+
+http://br.phptherightway.com/
+
+---
+
+## Anonymous Functions
+
+```php
+<?php
+$numbers = [1, 2, 3, 4];
+
+$squares = array_map(function($number) {
+  return $number * $number;
+}, $numbers);
+
+print_r($squares);
+
+// Array
+// (
+//     [0] => 1
+//     [1] => 4
+//     [2] => 9
+//     [3] => 16
+// )
+```

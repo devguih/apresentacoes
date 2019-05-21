@@ -80,24 +80,3 @@ https://packagist.org/
 http://br.phptherightway.com/
 
 ---
-
-## Anonymous Functions
-
-```php
-<?php
-$numbers = [1, 2, 3, 4];
-
-$squares = array_map(function($number) {
-  return $number * $number;
-}, $numbers);
-
-print_r($squares);
-
-// Array
-// (
-//     [0] => 1
-//     [1] => 4
-//     [2] => 9
-//     [3] => 16
-// )
-```

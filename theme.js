@@ -1,4 +1,5 @@
-import { future as theme } from "@mdx-deck/themes";
+import future from '@mdx-deck/themes/future'
+import highlight from '@mdx-deck/themes/syntax-highlighter-prism'
 
 const primary = "#CB772F";
 const secondary = "#6a8759";
@@ -6,7 +7,8 @@ const info = '#8888c3';
 const muted = "#808080";
 
 export default {
-  ...theme,
+  ...future,
+  ...highlight,
   font: '"Avenir Next", system-ui, sans-serif',
   colors: {
     text: muted,

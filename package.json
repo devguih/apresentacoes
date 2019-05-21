@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "php": "mdx-deck slides/php.mdx",
+    "php-2019": "mdx-deck slides/php-2019.mdx",
     "shell": "mdx-deck slides/shell.mdx"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mdx-deck": "^2.3.2",
-    "react-syntax-highlighter": "^10.2.1"
+    "mdx-deck": "^2.3.2"
   }
 }

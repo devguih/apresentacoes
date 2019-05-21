@@ -1,0 +1,500 @@
+import swiss from '@mdx-deck/themes/swiss'
+import highlight from '@mdx-deck/themes/syntax-highlighter-prism'
+import { Appear } from '@mdx-deck/components'
+
+export const themes = [
+  swiss,
+  highlight, {
+    font: '"Product Sans", system-ui, sans-serif',
+    pre: {
+      fontSize: '32px !important',
+      fontWeight: '500 !important',
+      padding: "0px !important",
+      backgroundColor: "#fff !important"
+    }
+  }
+]
+
+# PHP 2019
+
+---
+
+# Ecosystem
+
+
+---
+
+### Ecosystem
+
+<Appear>
+<li>PHP is everywhere</li>
+<li>PHP is used by 79.0% of all the websites</li>
+<li>±25 million downloads a day</li>
+</Appear>
+
+---
+
+<div
+  style={{
+    width: '100vw',
+    height: '100vh',
+    background: '#fefefe',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }}
+>
+  <img
+    src="https://stitcher.io/resources/img/blog/php-in-2019/packagist-2075x810.png"
+    style={{
+      maxWidth: '90%',
+      margin: '0 auto',
+      boxShadow: '1px 2px 15px -2px rgba(0,0,0,.2)'
+    }}
+  />
+</div>
+
+---
+
+### Where we are:
+
+<Appear>
+<li>7.3 (currently)</li>
+<li>7.4 (november 2018)</li>
+<li>8.0 (november 2019)</li>
+</Appear>
+
+---
+
+# New features
+
+---
+
+# JIT compiler
+
+---
+
+### JIT compiler
+
+A just-in-time (JIT) compiler will take the output of the<br />
+opcodes and instead of interpreting these, it will compile<br /> them into machine code and invoke that object code instead.
+
+A JIT should overcome the inefficiency of interpreting<br />
+opcodes every time a program runs. 
+
+---
+
+<div
+  style={{
+    width: '100vw',
+    height: '100vh',
+    background: '#fefefe',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }}
+>
+  <img
+    src="https://static.imasters.com.br/wp-content/uploads/2018/07/03114418/PHPPP.jpg"
+    style={{
+      maxWidth: '90%',
+      margin: '0 auto',
+      boxShadow: '1px 2px 15px -2px rgba(0,0,0,.2)'
+    }}
+  />
+</div>
+
+---
+
+# Short closures
+
+---
+
+### Short closures 
+
+```php
+array_map(function (User $user) { 
+    return $user->id; 
+}, $users)
+```
+
+---
+
+### Short closures 
+
+```php
+array_map(fn(User $user) => $user->id, $users)
+```
+
+---
+
+### Short closures 
+
+```php
+$modifier = 5;
+
+array_map(fn($x) => $x * $modifier, $numbers);
+```
+
+---
+
+# Typed properties
+
+---
+
+### Typed properties
+
+```php
+class A
+{
+    public string $name;
+    
+    public Foo $foo;
+}
+```
+
+---
+
+# Improved type variance
+
+---
+
+### Improved type variance
+
+```php
+class ParentType {}
+class ChildType extends ParentType {}
+
+class A
+{
+    public function covariantReturnTypes(): ParentType
+    { /* … */ }
+}
+```
+
+---
+
+### Improved type variance
+
+```php
+class B extends A
+{
+    public function covariantReturnTypes(): ChildType
+    { /* … */ }
+}
+```
+
+---
+
+### Contravariant arguments
+
+```php
+class A
+{
+    public function contraVariantArguments(ChildType $type)
+    { /* … */ }
+}
+
+class B extends A
+{
+    public function contraVariantArguments(ParentType $type)
+    { /* … */ }
+}
+```
+
+---
+
+# Null coalescing operator
+
+---
+
+### Null coalescing operator
+
+
+```php
+// Instead of:
+
+$data['date'] = $data['date'] ?? new DateTime();
+
+// Use:
+
+$data['date'] ??= new DateTime();
+```
+
+---
+
+# Spread operator
+
+---
+
+### Spread operator
+
+```php
+$arrayA = [1, 2, 3];
+
+$arrayB = [4, 5];
+
+$result = [0, ...$arrayA, ...$arrayB, 6 ,7];
+
+// [0, 1, 2, 3, 4, 5, 6, 7]
+```
+
+---
+
+# Traits
+
+---
+
+### Traits
+
+```php
+trait ApplySearchFilter {
+    public function search()
+    { /* … */ }
+}
+```
+
+---
+
+### Traits
+
+```php
+class UsuarioController {
+    use ApplySearchFilter;
+
+    public function index()
+    { /* … */ }
+}
+```
+
+---
+
+# FFI
+
+---
+
+### FFI
+
+Foreign Function Interface  allows calling C code from userland.
+
+This means that PHP extensions can be written in pure PHP.
+
+---
+
+### FFI
+
+```php
+$ffi = FFI::cdef(
+    "int printf(const char *format, ...);",
+    "libc.so.6");
+$ffi->printf("Hello %s!\n", "world");
+```
+
+---
+
+# Anonymous classes
+
+---
+
+### Anonymous classes
+
+```php
+// Antes
+class Logger
+{
+    public function log($msg)
+    { /* … */ }
+}
+
+$util->setLogger(new Logger());
+```
+
+---
+
+### Anonymous classes
+
+```php
+// Agora
+$util->setLogger(new class {
+    public function log($msg)
+    { /* … */ }
+});
+```
+
+---
+
+# Return type declarations
+
+---
+
+### Return type declarations
+
+```php
+function sum($a, $b): float {
+    return $a + $b;
+}
+
+var_dump(sum(1, 2));
+```
+
+---
+
+### Return type declarations
+
+```php
+class C {}
+
+function getC(): C {
+    return new C;
+}
+
+var_dump(getC());
+```
+
+---
+
+### Return type declarations
+
+```php
+function get_item(): ?string {
+    if (isset($_GET['item'])) {
+        return $_GET['item'];
+    } else {
+        return null;
+    }
+}
+```
+
+---
+
+# Generators
+
+---
+
+### Generators
+
+```php
+class Users implements IteratorAggregate {
+    protected $data;
+ 
+    public function __construct(array $data) {
+        $this->data = $data;
+    }
+ 
+    public function getIterator() {
+        foreach ($this->data as $key => $value) {
+            yield $key => $value;
+        }
+    }
+}
+
+```
+
+---
+
+### Generators
+
+```php
+$user = new Users(['foo' => 'bar', 'bar' => 'foo']);
+foreach ($user as $k => $v) {
+    echo $k, ' => ', $v, "\n";
+}
+```
+
+---
+
+# Concatenation precedence
+
+---
+
+### Concatenation precedence
+
+```php
+
+$a = 1;
+$b = 2;
+
+echo "sum: " . $a + $b;
+```
+
+---
+
+### Concatenation precedence
+
+```php
+
+$a = 1;
+$b = 2;
+
+echo "sum: " . $a + $b; // 2
+```
+
+---
+
+### Concatenation precedence
+
+```php
+
+$a = 1;
+$b = 2;
+
+echo ("sum: " . $a) + $b;
+```
+
+---
+
+### Concatenation precedence
+
+```php
+
+$a = 1;
+$b = 2;
+
+echo "sum :" . ($a + $b); // 3
+```
+
+---
+
+# Deprecations
+
+---
+
+### Deprecations
+
+- PEAR not enabled
+- Short PHP tags
+- Left-associative ternary operator 
+
+---
+
+### Left-associative ternary operator
+
+```php
+1 ? 2 : 3 ? 4 : 5;   // deprecated
+(1 ? 2 : 3) ? 4 : 5; // ok
+```
+
+---
+
+### Deprecations
+
+- PEAR not enabled
+- Short PHP tags
+- Left-associative ternary operator 
+- Funções strip_tags, fgetss e image2wbmp
+
+
+---
+
+### Mais algumas novidades
+
+- Permitir vírgula à direita em chamadas de função e método
+- Opção para fazer json_encode e json_decode lançar exceções em erros
+- Função is_countable
+
+
+---
+
+### Extra
+
+https://externals.io/message/102415#102415

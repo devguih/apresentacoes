@@ -21,7 +21,6 @@ export const themes = [
 
 # Ecosystem
 
-
 ---
 
 ### Ecosystem
@@ -29,7 +28,10 @@ export const themes = [
 <Appear>
 <li>PHP is everywhere</li>
 <li>PHP is used by 79.0% of all the websites</li>
-<li>±25 million packages download a day</li>
+<li>Around 2 billion sites on the web</li>
+<li>On 10 million physical machines</li>
+<li>Currently ~50% PHP 7 Adoption</li>
+<li>±25 million packages download a day on packagist</li>
 </Appear>
 
 ---
@@ -53,6 +55,62 @@ export const themes = [
     }}
   />
 </div>
+
+---
+
+### Packagist
+
+https://packagist.org/
+
+---
+
+# PSR
+
+---
+
+## PSR
+
+<Appear>
+<li>1 - Padrões básicos de código</li>
+<li>2 - Padrões de codificação</li>
+<li>3 - Interface de log</li>
+<li>4 - Padrão de autoload</li>
+<li>6 - Interface de cache</li>
+<li>7 - Interface de mensagens HTTP</li>
+</Appear>
+
+---
+
+# PHPUnit
+
+---
+
+### PHPUnit
+
+<Appear>
+<li>5.7 Beta (5.6|7.0)</li>
+<li>5.6 Stable (5.6|7.0)</li>
+<li>4.8 Old (5.3.3)</li>
+</Appear>
+
+---
+
+# Monolog
+
+---
+
+### Monolog
+
+<Appear>
+<li>PSR-3</li>
+<li>Handlers</li>
+</Appear>
+
+---
+
+### PHP The Right Way
+
+http://br.phptherightway.com/
 
 ---
 
@@ -235,7 +293,8 @@ $ffi->printf("Hello %s!\n", "world");
 ### Anonymous classes
 
 ```php
-// Antes
+// Before
+
 class Logger
 {
     public function log($msg)
@@ -250,7 +309,8 @@ $util->setLogger(new Logger());
 ### Anonymous classes
 
 ```php
-// Agora
+// Now
+
 $util->setLogger(new class {
     public function log($msg)
     { /* … */ }
@@ -283,12 +343,12 @@ class A
 ### Improved type variance
 
 ```php
-class ParentType {}
-class ChildType extends ParentType {}
+class User {}
+class Customer extends User {}
 
 class A
 {
-    public function covariantReturnTypes(): ParentType
+    public function getItem(): User
     { /* … */ }
 }
 ```
@@ -300,25 +360,7 @@ class A
 ```php
 class B extends A
 {
-    public function covariantReturnTypes(): ChildType
-    { /* … */ }
-}
-```
-
----
-
-### Contravariant arguments
-
-```php
-class A
-{
-    public function contraVariantArguments(ChildType $type)
-    { /* … */ }
-}
-
-class B extends A
-{
-    public function contraVariantArguments(ParentType $type)
+    public function getItem(): Customer
     { /* … */ }
 }
 ```
@@ -344,13 +386,13 @@ var_dump(sum(1, 2));
 ### Return type declarations
 
 ```php
-class C {}
+class User {}
 
-function getC(): C {
-    return new C;
+function getUser(): User {
+    return new User();
 }
 
-var_dump(getC());
+var_dump(getUser());
 ```
 
 ---
@@ -376,20 +418,20 @@ function get_item(): ?string {
 ### Generators
 
 ```php
-class Users implements IteratorAggregate {
-    protected $data;
- 
-    public function __construct(array $data) {
-        $this->data = $data;
+function getLinesFromFile($fileName) {
+    if (!$fileHandle = fopen($fileName, 'r')) {
+        return;
     }
  
-    public function getIterator() {
-        foreach ($this->data as $key => $value) {
-            yield $key => $value;
-        }
+    $lines = [];
+    while (false !== $line = fgets($fileHandle)) {
+        $lines[] = $line;
     }
+ 
+    fclose($fileHandle);
+ 
+    return $lines;
 }
-
 ```
 
 ---
@@ -397,10 +439,27 @@ class Users implements IteratorAggregate {
 ### Generators
 
 ```php
-$user = new Users(['foo' => 'bar', 'bar' => 'foo']);
-foreach ($user as $k => $v) {
-    echo $k, ' => ', $v, "\n";
+function getLinesFromFile($fileName) {
+    if (!$fileHandle = fopen($fileName, 'r')) {
+        return;
+    }
+ 
+    while (false !== $line = fgets($fileHandle)) {
+        yield $line;
+    }
+ 
+    fclose($fileHandle);
 }
+```
+
+---
+
+### Generators
+
+```php
+$lines = getLinesFromFile($fileName);
+foreach ($lines as $line)
+{ /* … */ }
 ```
 
 ---
@@ -463,9 +522,11 @@ echo "sum :" . ($a + $b); // 3
 
 ### Deprecations
 
-- PEAR not enabled
-- Short PHP tags
-- Left-associative ternary operator 
+<Appear>
+<li>PEAR not enabled</li>
+<li>Short PHP tags</li>
+<li>Left-associative ternary operator </li>
+</Appear>
 
 ---
 
@@ -480,23 +541,35 @@ echo "sum :" . ($a + $b); // 3
 
 ### Deprecations
 
-- PEAR not enabled
-- Short PHP tags
-- Left-associative ternary operator 
-- Funções strip_tags, fgetss e image2wbmp
-
+<ul>
+<li>PEAR not enabled</li>
+<li>Short PHP tags</li>
+<li>Left-associative ternary operator </li>
+<li>Funções strip_tags, fgetss e image2wbmp</li>
+</ul>
 
 ---
 
 ### Mais algumas novidades
 
-- Permitir vírgula à direita em chamadas de função e método
-- Opção para fazer json_encode e json_decode lançar exceções em erros
-- Função is_countable
-
+<Appear>
+<li>Permitir vírgula à direita em chamadas de função e método</li>
+<li>Opção para fazer json_encode e json_decode lançar exceções em erros</li>
+<li>Função is_countable</li>
+</Appear>
 
 ---
 
 ### Extra
 
+##### libuv
+
 https://externals.io/message/102415#102415
+
+---
+
+é isso
+
+tks
+
+https://github.com/gui-od

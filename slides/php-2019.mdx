@@ -1,19 +1,24 @@
-import swiss from '@mdx-deck/themes/swiss'
-import highlight from '@mdx-deck/themes/syntax-highlighter-prism'
-import { Appear } from '@mdx-deck/components'
+import swiss from "@mdx-deck/themes/swiss";
+import highlight from "@mdx-deck/themes/syntax-highlighter-prism";
+import { Appear } from "@mdx-deck/components";
 
 export const themes = [
   swiss,
-  highlight, {
+  highlight,
+  {
     font: '"Product Sans", system-ui, sans-serif',
+    code: {
+      fontFamily: "Fira Code !important",
+      fontVariantLigatures: "common-ligatures"
+    },
     pre: {
-      fontSize: '32px !important',
-      fontWeight: '500 !important',
+      fontSize: "32px !important",
+      fontWeight: "500 !important",
       padding: "0px !important",
       backgroundColor: "#fff !important"
     }
   }
-]
+];
 
 # PHP 2019
 
@@ -26,32 +31,32 @@ export const themes = [
 ### Ecosystem
 
 <Appear>
-<li>PHP is everywhere</li>
-<li>PHP is used by 79.0% of all the websites</li>
-<li>Around 2 billion sites on the web</li>
-<li>On 10 million physical machines</li>
-<li>Currently ~50% PHP 7 Adoption</li>
-<li>±25 million packages download a day on packagist</li>
+  <li>PHP is everywhere</li>
+  <li>PHP is used by 79.0% of all the websites</li>
+  <li>Around 2 billion sites on the web</li>
+  <li>On 10 million physical machines</li>
+  <li>Currently ~50% PHP 7 Adoption</li>
+  <li>±25 million packages download a day on packagist</li>
 </Appear>
 
 ---
 
 <div
   style={{
-    width: '100vw',
-    height: '100vh',
-    background: '#fefefe',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    width: "100vw",
+    height: "100vh",
+    background: "#fefefe",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
   }}
 >
   <img
     src="https://stitcher.io/resources/img/blog/php-in-2019/packagist-2075x810.png"
     style={{
-      maxWidth: '90%',
-      margin: '0 auto',
-      boxShadow: '1px 2px 15px -2px rgba(0,0,0,.2)'
+      maxWidth: "90%",
+      margin: "0 auto",
+      boxShadow: "1px 2px 15px -2px rgba(0,0,0,.2)"
     }}
   />
 </div>
@@ -71,12 +76,12 @@ https://packagist.org/
 ## PSR
 
 <Appear>
-<li>1 - Padrões básicos de código</li>
-<li>2 - Padrões de codificação</li>
-<li>3 - Interface de log</li>
-<li>4 - Padrão de autoload</li>
-<li>6 - Interface de cache</li>
-<li>7 - Interface de mensagens HTTP</li>
+  <li>1 - Padrões básicos de código</li>
+  <li>2 - Padrões de codificação</li>
+  <li>3 - Interface de log</li>
+  <li>4 - Padrão de autoload</li>
+  <li>6 - Interface de cache</li>
+  <li>7 - Interface de mensagens HTTP</li>
 </Appear>
 
 ---
@@ -88,9 +93,9 @@ https://packagist.org/
 ### PHPUnit
 
 <Appear>
-<li>5.7 Beta (5.6|7.0)</li>
-<li>5.6 Stable (5.6|7.0)</li>
-<li>4.8 Old (5.3.3)</li>
+  <li>5.7 Beta (5.6|7.0)</li>
+  <li>5.6 Stable (5.6|7.0)</li>
+  <li>4.8 Old (5.3.3)</li>
 </Appear>
 
 ---
@@ -102,8 +107,8 @@ https://packagist.org/
 ### Monolog
 
 <Appear>
-<li>PSR-3</li>
-<li>Handlers</li>
+  <li>PSR-3</li>
+  <li>Handlers</li>
 </Appear>
 
 ---
@@ -117,11 +122,11 @@ http://br.phptherightway.com/
 ### Where we are:
 
 <Appear>
-<li>5.6 - 28 august 2014</li>
-<li>7.0 - 3 december 2015</li>
-<li style={{ color: '#7747fd' }}>7.3 - 6 december 2018</li>
-<li>7.4 - 21 november 2019</li>
-<li>8.0 - Q4 2020</li>
+  <li>5.6 - 28 august 2014</li>
+  <li>7.0 - 3 december 2015</li>
+  <li style={{ color: "#7747fd" }}>7.3 - 6 december 2018</li>
+  <li>7.4 - 21 november 2019</li>
+  <li>8.0 - Q4 2020</li>
 </Appear>
 
 ---
@@ -140,26 +145,26 @@ A just-in-time (JIT) compiler will take the output of the<br />
 opcodes and instead of interpreting these, it will compile<br /> them into machine code and invoke that object code instead.
 
 A JIT should overcome the inefficiency of interpreting<br />
-opcodes every time a program runs. 
+opcodes every time a program runs.
 
 ---
 
 <div
   style={{
-    width: '100vw',
-    height: '100vh',
-    background: '#fefefe',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    width: "100vw",
+    height: "100vh",
+    background: "#fefefe",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
   }}
 >
   <img
     src="https://static.imasters.com.br/wp-content/uploads/2018/07/03114418/PHPPP.jpg"
     style={{
-      maxWidth: '90%',
-      margin: '0 auto',
-      boxShadow: '1px 2px 15px -2px rgba(0,0,0,.2)'
+      maxWidth: "90%",
+      margin: "0 auto",
+      boxShadow: "1px 2px 15px -2px rgba(0,0,0,.2)"
     }}
   />
 </div>
@@ -170,17 +175,17 @@ opcodes every time a program runs.
 
 ---
 
-### Short closures 
+### Short closures
 
 ```php
-array_map(function (User $user) { 
-    return $user->id; 
+array_map(function (User $user) {
+    return $user->id;
 }, $users)
 ```
 
 ---
 
-### Short closures 
+### Short closures
 
 ```php
 array_map(fn(User $user) => $user->id, $users)
@@ -188,7 +193,7 @@ array_map(fn(User $user) => $user->id, $users)
 
 ---
 
-### Short closures 
+### Short closures
 
 ```php
 $modifier = 5;
@@ -203,7 +208,6 @@ array_map(fn($x) => $x * $modifier, $numbers);
 ---
 
 ### Null coalescing operator
-
 
 ```php
 // Instead of:
@@ -269,7 +273,7 @@ class UsuarioController {
 
 ### FFI
 
-Foreign Function Interface  allows calling C code from userland.
+Foreign Function Interface allows calling C code from userland.
 
 This means that PHP extensions can be written in pure PHP.
 
@@ -329,7 +333,7 @@ $util->setLogger(new class {
 class A
 {
     public string $name;
-    
+
     public Foo $foo;
 }
 ```
@@ -422,14 +426,14 @@ function getLinesFromFile($fileName) {
     if (!$fileHandle = fopen($fileName, 'r')) {
         return;
     }
- 
+
     $lines = [];
     while (false !== $line = fgets($fileHandle)) {
         $lines[] = $line;
     }
- 
+
     fclose($fileHandle);
- 
+
     return $lines;
 }
 ```
@@ -443,11 +447,11 @@ function getLinesFromFile($fileName) {
     if (!$fileHandle = fopen($fileName, 'r')) {
         return;
     }
- 
+
     while (false !== $line = fgets($fileHandle)) {
         yield $line;
     }
- 
+
     fclose($fileHandle);
 }
 ```
@@ -523,9 +527,9 @@ echo "sum :" . ($a + $b); // 3
 ### Deprecations
 
 <Appear>
-<li>PEAR not enabled</li>
-<li>Short PHP tags</li>
-<li>Left-associative ternary operator </li>
+  <li>PEAR not enabled</li>
+  <li>Short PHP tags</li>
+  <li>Left-associative ternary operator </li>
 </Appear>
 
 ---
@@ -542,10 +546,10 @@ echo "sum :" . ($a + $b); // 3
 ### Deprecations
 
 <ul>
-<li>PEAR not enabled</li>
-<li>Short PHP tags</li>
-<li>Left-associative ternary operator </li>
-<li>Funções strip_tags, fgetss e image2wbmp</li>
+  <li>PEAR not enabled</li>
+  <li>Short PHP tags</li>
+  <li>Left-associative ternary operator </li>
+  <li>Funções strip_tags, fgetss e image2wbmp</li>
 </ul>
 
 ---
@@ -553,9 +557,9 @@ echo "sum :" . ($a + $b); // 3
 ### Mais algumas novidades
 
 <Appear>
-<li>Permitir vírgula à direita em chamadas de função e método</li>
-<li>Opção para fazer json_encode e json_decode lançar exceções em erros</li>
-<li>Função is_countable</li>
+  <li>Permitir vírgula à direita em chamadas de função e método</li>
+  <li>Opção para fazer json_encode e json_decode lançar exceções em erros</li>
+  <li>Função is_countable</li>
 </Appear>
 
 ---

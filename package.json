@@ -6,6 +6,7 @@
   "scripts": {
     "php": "mdx-deck slides/php.mdx",
     "php-2019": "mdx-deck slides/php-2019.mdx",
+    "react": "mdx-deck slides/state-of-react.mdx",
     "shell": "mdx-deck slides/shell.mdx"
   },
   "keywords": [],

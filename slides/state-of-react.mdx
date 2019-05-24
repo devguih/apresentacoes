@@ -1,0 +1,221 @@
+import swiss from "@mdx-deck/themes/swiss";
+import highlight from "@mdx-deck/themes/syntax-highlighter-prism";
+
+import { Split } from "mdx-deck/layouts";
+import { Appear } from "@mdx-deck/components";
+
+export const themes = [
+  swiss,
+  highlight,
+  {
+    font: '"Product Sans", system-ui, sans-serif',
+    code: {
+      margin: "0 auto !important",
+      fontFamily: "Fira Code !important",
+      fontVariantLigatures: "common-ligatures"
+    },
+    pre: {
+      fontSize: "32px !important",
+      fontWeight: "500 !important",
+      padding: "0px !important",
+      backgroundColor: "#fff !important"
+    },
+    h1: {
+      textAlign: "center"
+    },
+    h2: {
+      textAlign: "center"
+    }
+  }
+];
+
+# State of react
+
+---
+
+```jsx
+f(state, props) => ui
+```
+
+---
+
+```jsx
+f(g(state, props)) => ui
+```
+
+---
+
+```jsx
+f(
+  g(
+    state,
+    props
+  )
+) => ui
+```
+
+---
+
+### React 16.6 to present
+
+```jsx
+React.memo();
+```
+
+```jsx
+contextType;
+```
+
+```jsx
+React.lazy();
+```
+
+```jsx
+<Suspense />
+```
+
+```jsx
+<ConcurrentMode />
+```
+
+```jsx
+react - cache;
+```
+
+```jsx
+Profiler!
+```
+
+```jsx
+scheduler;
+```
+
+---
+
+### React 16.6 to present
+
+```jsx
+useRef;
+```
+
+```jsx
+useState;
+```
+
+```jsx
+useReducer;
+```
+
+```jsx
+useMemo;
+```
+
+```jsx
+useCallback;
+```
+
+```jsx
+useReducer;
+```
+
+```jsx
+useEffect;
+```
+
+```jsx
+useLayoutEffect;
+```
+
+---
+
+### React 16.6 to present
+
+```jsx
+useImperativeMethods;
+```
+
+```jsx
+useImperativeHandle;
+```
+
+```jsx
+useMutationEffect;
+```
+
+```jsx
+useMoreCowbell;
+```
+
+```jsx
+act();
+```
+
+```jsx
+eslint - plugin - react - hooks;
+```
+
+```jsx
+create-react-app 3.0
+```
+
+```jsx
+async act()
+```
+
+---
+
+## Everything goes in render()
+
+---
+
+## Loading stuff is still hard.
+
+---
+
+<div style={{ textAlign: 'center' }}>
+
+### Make it good
+
+### Make it fast
+
+### Make it pretty
+
+</div>
+
+---
+
+## Demo
+
+---
+
+### Benefits of Suspense
+
+<Appear>
+  <li>Feels “sync”</li>
+  <li>Easy to coordinate</li>
+  <li>Fast & Pretty</li>
+</Appear>
+
+---
+
+### The 2019 Roadmap
+
+<Appear>
+  <li>Suspense for data fetching</li>
+  <li>A new server renderer</li>
+</Appear>
+
+---
+
+### What else?
+
+<Appear>
+  <li>React Fire</li>
+  <li>React Fusion</li>
+  <li>React Native Fabric</li>
+  <li>React Flare</li>
+</Appear>
+
+---
+
+That's it
